@@ -1,8 +1,13 @@
-from flask import Flask , request , jsonify
+from flask import Flask , request , jsonify , render_template
 from src.lyrics import lyrics
 
 
+
 app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("./home/index.html")
 
 @app.route("/lyrics")
 def lyr():
